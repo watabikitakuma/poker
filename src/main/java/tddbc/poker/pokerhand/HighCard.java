@@ -8,6 +8,6 @@ import tddbc.poker.Hand;
 public class HighCard implements PokerHandRule {
     @Override
     public boolean match(Hand hand) {
-        return hand.uniqueCountOfRank() == 5 && hand.uniqueCountOfSuit() == 4;
+        return hand.uniqueCountOfRank() == 5 && hand.uniqueCountOfSuit() == 4 && !hand.isSequentialRanks();
     }
 }
