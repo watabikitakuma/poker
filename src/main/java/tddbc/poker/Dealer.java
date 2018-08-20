@@ -11,14 +11,14 @@ import java.util.List;
  */
 public class Dealer {
 
-    private Cards cards;
+    private Cards deck;
 
-    public Dealer(Cards cards) {
-        this.cards = cards;
+    public Dealer(Cards deck) {
+        this.deck = deck;
     }
 
     public void shuffle() {
-        cards.shuffle();
+        deck.shuffle();
     }
 
     public Hand deal() {
@@ -30,6 +30,6 @@ public class Dealer {
     }
 
     public Card getCard() {
-        return cards.removeOne();
+        return deck.removeOne();
     }
 }
