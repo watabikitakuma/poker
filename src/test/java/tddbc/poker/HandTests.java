@@ -43,7 +43,7 @@ public class HandTests {
         Card card1 = new SuitCard(Rank.ACE, SuitType.HEART);
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
         Cards drawCards = new Cards(Arrays.asList(new Card[]{card1, card2}));
-        hand.add(drawCards);
+        hand.draw(drawCards);
         assertEquals("|A♠|J♦|Q☘|A♥|A♦|", hand.showCards());
     }
 
@@ -56,7 +56,7 @@ public class HandTests {
         Card card1 = new SuitCard(Rank.ACE, SuitType.HEART);
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
         Cards drawCards = new Cards(Arrays.asList(new Card[]{card1, card2}));
-        hand.add(drawCards);
+        hand.draw(drawCards);
         assertEquals("|A♠|J♦|Q☘|A♥|A♦|", hand.showCards());
 
         hand.sort();

@@ -71,7 +71,7 @@ public class Hand {
         }
     }
 
-    public void add(Cards cards) {
+    public void draw(Cards cards) {
         for (Card card : cards) {
             if (card.isSuit()) {
                 suitCards.add((SuitCard)card);
