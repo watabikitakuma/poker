@@ -1,14 +1,12 @@
 package tddbc.cards.special;
 
 import tddbc.cards.Card;
-import tddbc.cards.CardType;
 
 /**
  * ジョーカー
  */
 public class Joker implements Card {
 
-    CardType type = CardType.ジョーカー;
     private static final String SYMBOL = "JK";
 
     public static boolean of(String cardName) {
@@ -17,7 +15,7 @@ public class Joker implements Card {
 
     @Override
     public String name() {
-        return type.name();
+        return "ジョーカー";
     }
 
     @Override
