@@ -20,6 +20,10 @@ public class Hand {
         sort();
     }
 
+    public Hand(Cards cards) {
+        this(cards.toArray());
+    }
+
     public static int count() {
         return HAND_COUNT;
     }

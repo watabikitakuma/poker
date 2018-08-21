@@ -36,7 +36,7 @@ public class Cards implements Iterable<Card> {
         return list.iterator();
     }
 
-    private Card[] toArray() {
+    public Card[] toArray() {
         return list.toArray(new Card[list.size()]);
     }
 }
