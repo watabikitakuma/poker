@@ -6,7 +6,7 @@ package tddbc.cards.suit;
 public enum SuitType {
     SPADE("スペード", "♠"),
     DIAMOND("ダイヤ", "♦"),
-    CLUB("クローバー", "☘"),
+    CLUB("クローバー", "♣"),
     HEART("ハート", "♥");
 
     private String name;

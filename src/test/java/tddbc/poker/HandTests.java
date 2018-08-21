@@ -22,7 +22,7 @@ public class HandTests {
     @DisplayName("手札を表示できること")
     public void toSuitCardArray() {
         Hand hand = new Hand(CardSet.forHighCards());
-        assertEquals("|A♠|4♥|8♠|J♦|Q☘|", hand.showCards());
+        assertEquals("|A♠|4♥|8♠|J♦|Q♣|", hand.showCards());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class HandTests {
         Hand hand = new Hand(CardSet.forHighCards());
         Cards releaseTargets = new InputParser().parse("4♥", "8♠");
         hand.discard(releaseTargets);
-        assertEquals("|A♠|J♦|Q☘|", hand.showCards());
+        assertEquals("|A♠|J♦|Q♣|", hand.showCards());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class HandTests {
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
         Cards drawCards = new Cards(Arrays.asList(new Card[]{card1, card2}));
         hand.draw(drawCards);
-        assertEquals("|A♠|J♦|Q☘|A♥|A♦|", hand.showCards());
+        assertEquals("|A♠|J♦|Q♣|A♥|A♦|", hand.showCards());
     }
 
     @Test
@@ -57,10 +57,10 @@ public class HandTests {
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
         Cards drawCards = new Cards(Arrays.asList(new Card[]{card1, card2}));
         hand.draw(drawCards);
-        assertEquals("|A♠|J♦|Q☘|A♥|A♦|", hand.showCards());
+        assertEquals("|A♠|J♦|Q♣|A♥|A♦|", hand.showCards());
 
         hand.sort();
-        assertEquals("|A♠|A♦|A♥|J♦|Q☘|", hand.showCards());
+        assertEquals("|A♠|A♦|A♥|J♦|Q♣|", hand.showCards());
     }
 
     @Test

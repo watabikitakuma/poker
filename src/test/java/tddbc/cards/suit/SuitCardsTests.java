@@ -19,7 +19,7 @@ public class SuitCardsTests {
         String[] actual = suitCards.toTextArray();
 
         assertEquals("A♠", actual[0]);
-        assertEquals("Q☘", actual[1]);
+        assertEquals("Q♣", actual[1]);
         assertEquals("8♠", actual[2]);
         assertEquals("J♦", actual[3]);
         assertEquals("4♥", actual[4]);
@@ -39,7 +39,7 @@ public class SuitCardsTests {
         String[] actual = suitCards.toTextArray();
 
         assertEquals("A♠", actual[0]);
-        assertEquals("Q☘", actual[1]);
+        assertEquals("Q♣", actual[1]);
         assertEquals("J♦", actual[2]);
     }
 }
