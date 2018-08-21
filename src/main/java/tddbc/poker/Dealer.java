@@ -21,15 +21,19 @@ public class Dealer {
         deck.shuffle();
     }
 
-    public Hand deal() {
-        List<Card> cardsOfHand = new ArrayList<>();
-        for (int i = 0; i < Hand.count(); i++) {
-            cardsOfHand.add(getCard());
-        }
-        return new Hand(cardsOfHand.toArray(new Card[cardsOfHand.size()]));
+    public Cards deal() {
+        return deal(Hand.count());
     }
 
     public Card getCard() {
         return deck.removeOne();
+    }
+
+    public Cards deal(int specifiedCount) {
+        List<Card> cardsOfHand = new ArrayList<>();
+        for (int i = 0; i < specifiedCount; i++) {
+            cardsOfHand.add(getCard());
+        }
+        return new Cards(cardsOfHand);
     }
 }
