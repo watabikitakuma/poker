@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 入力パーサー
+ * カードパーサー
  */
-public class InputParser {
+public class CardParser {
 
     public Cards parse(String... cardNames) {
         List<Card> cards = new ArrayList<>();
