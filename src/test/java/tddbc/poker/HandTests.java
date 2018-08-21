@@ -9,7 +9,7 @@ import tddbc.cards.suit.Rank;
 import tddbc.cards.suit.SuitCard;
 import tddbc.cards.suit.SuitType;
 import tddbc.poker.helper.CardSet;
-import tddbc.poker.io.InputParser;
+import tddbc.poker.io.CardParser;
 
 import java.util.Arrays;
 
@@ -29,7 +29,7 @@ public class HandTests {
     @DisplayName("手札を捨てられること")
     public void discard() {
         Hand hand = new Hand(CardSet.forHighCards());
-        Cards releaseTargets = new InputParser().parse("4♥", "8♠");
+        Cards releaseTargets = new CardParser().parse("4♥", "8♠");
         hand.discard(releaseTargets);
         assertEquals("|A♠|J♦|Q♣|", hand.showCards());
     }
@@ -38,7 +38,7 @@ public class HandTests {
     @DisplayName("手札を交換できること")
     public void changeCards() {
         Hand hand = new Hand(CardSet.forHighCards());
-        Cards releaseTargets = new InputParser().parse("4♥", "8♠");
+        Cards releaseTargets = new CardParser().parse("4♥", "8♠");
         hand.discard(releaseTargets);
         Card card1 = new SuitCard(Rank.ACE, SuitType.HEART);
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
@@ -51,7 +51,7 @@ public class HandTests {
     @DisplayName("手札交換後にランク順に並び替えできること")
     public void sort() {
         Hand hand = new Hand(CardSet.forHighCards());
-        Cards releaseTargets = new InputParser().parse("4♥", "8♠");
+        Cards releaseTargets = new CardParser().parse("4♥", "8♠");
         hand.discard(releaseTargets);
         Card card1 = new SuitCard(Rank.ACE, SuitType.HEART);
         Card card2 = new SuitCard(Rank.ACE, SuitType.DIAMOND);
