@@ -1,9 +1,6 @@
 package tddbc.cards;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * カードのファーストクラスコレクション
@@ -13,6 +10,10 @@ public class Cards implements Iterable<Card> {
 
     public Cards(List<Card> cardList) {
         this.list = cardList;
+    }
+
+    public static Cards empty() {
+        return new Cards(new ArrayList<>());
     }
 
     public Card removeOne() {
@@ -38,5 +39,9 @@ public class Cards implements Iterable<Card> {
 
     public Card[] toArray() {
         return list.toArray(new Card[list.size()]);
+    }
+
+    public boolean isNotEmpty() {
+        return !list.isEmpty();
     }
 }
